@@ -1,12 +1,15 @@
 package com.moodanalyzer;
 
-
-
 public class MoodAnalyzer {
-    public String analyseMood(String message) {
-        if(message.contains("Sad"))
-            return "SAD";
+    private String message;
+    public MoodAnalyzer(String message) {
+        this.message = message;
+    }
+
+    public String analyseMood() {
+    	if (message.contains("Sad"))
+    		return "SAD";
         else
-            return "HAPPY";
+        	return "HAPPY";
     }
 }
