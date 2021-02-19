@@ -1,14 +1,20 @@
 package com.moodanalyzer;
+import org.junit.Assert;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class MoodAnalyzerTest {
+    @Test
+    public void givenMessgae_WhenSad_ShouldReturn_Sad() {
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+        String mood = moodAnalyzer.analyseMood("I am in Sad mood");
+        Assert.assertEquals("SAD",mood);
 
-import org.junit.jupiter.api.Test;
+    }
 
-class MoodAnalyzerTest {
-
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
-
+    @Test
+    public void givenMessage_WhenNotSad_ShouldReturn_Happy() {
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+        String mood = moodAnalyzer.analyseMood("I am in Any mood");
+        Assert.assertEquals("HAPPY",mood);
+    }
 }
